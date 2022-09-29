@@ -35,7 +35,7 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, cur) => acc +cur.price, 0)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -55,7 +55,10 @@ const cart = [
 
 //CODE HERE
 
-
+function calcFinalPrice(cartTotal, couponValue, tax){
+    return cartTotal + cartTotal * tax - couponValue
+}
+console.log(calcFinalPrice(10, 2, 1))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,7 +82,12 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+    Properties:
+    firstName will be a string.
+    lastName will be a string.
+    streetAddress will be a string.
+    zipCode will be a number.
+    wantsMarketingEmails will be a boolean.
 */
 
 /*
@@ -88,3 +96,12 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+    firstName: 'Jared',
+    lastName: 'Collier',
+    streetAddress: 'Descant st',
+    zipCode: 84005,
+    wantsMarketingEmails: true,
+
+}

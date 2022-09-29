@@ -84,7 +84,7 @@ let {price} = pizza
 
 //CODE HERE
 
-
+let {category} = 'entree'
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -100,7 +100,53 @@ let {price} = pizza
 
 //CODE HERE
 
-let foodArr = ['pepperoni', 20, 90, 9, 'lifestyle']
+const foodArr = [
+    {
+        name: 'pizza',
+        price: 9,
+        category: 'entree',
+        popularity: 1,
+        rating: 4.7,
+        tags: ['customer favorite', 'kids', 'gluten-free']
+
+    },
+
+    {
+        name: 'pasta',
+        price: 8,
+        category: 'entree',
+        popularity: 3,
+        rating: 4.5,
+        tags: ['customer favorite'],
+    },
+
+    {
+        name: 'salad',
+        price: 8,
+        category: 'entree',
+        popularity: 3,
+        rating: 4.5,
+        tags: ['gluten-free'],
+    },
+
+    {
+        name: 'cookie',
+        price: 3,
+        category: 'dessert',
+        popularity: 2,
+        rating: 5,
+        tags: ['customer favorite', 'kids'],
+    },
+
+    {
+        name: 'breadsticks',
+        price: 7,
+        category: 'side',
+        popularity: 5,
+        rating: 4.5,
+        tags: ['customer favorite', 'kids'],
+    },
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -116,11 +162,16 @@ let foodArr = ['pepperoni', 20, 90, 9, 'lifestyle']
 
 //CODE HERE
 
+// the filter() function returns values from an array that meet a required condition.
 
+const filteredFood = foodArr.filter((foodObj) => {
+    // The code here should check for a condition/boolean
+    if(foodObj.tags.includes('kids')) {
+        return foodObj;
+    }
+})
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
-
+console.log(filteredFood)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -163,6 +214,17 @@ let foodArr = ['pepperoni', 20, 90, 9, 'lifestyle']
 
 //CODE HERE
 
+function filterByProperty(property, type, number){
+    let filteredFood
+    filteredFood = foodArr.filter(() => {
+        if(type === 'above'){
+            return foodObj[property] > number
+        }else if(type === 'below'){
+            return foodObj[property] <= number
+        }
+    })
+    return filteredFood
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -172,3 +234,5 @@ let foodArr = ['pepperoni', 20, 90, 9, 'lifestyle']
 */
 
 //CODE HERE
+
+console.log(filterByProperty('popularity', 2, 'below'))

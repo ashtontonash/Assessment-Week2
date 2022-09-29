@@ -24,9 +24,9 @@
 //CODE HERE
 
 
-greetUser = (username) => {
-    return ('welcome back,'[Andrew])
-}
+const greetUser = (username) => { `Welcome back, ${username}`}
+
+// console.log(greetUser('Kyle'))
 
 
 //////////////////PROBLEM 2////////////////////
